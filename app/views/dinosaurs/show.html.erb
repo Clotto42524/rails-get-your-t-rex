@@ -8,5 +8,9 @@
     <li><%= @dinosaur.age %></li>
   </ul>
 </div>
-<%= link_to "Delete this dinosaur", dinosaur_path(@dinosaur),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+<div class="container">
+  <p><%= link_to "Back to dinos", dinosaurs_path %></p>
+  <p><%= link_to "Delete this dinosaur", dinosaur_path(@dinosaur),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+</div>
