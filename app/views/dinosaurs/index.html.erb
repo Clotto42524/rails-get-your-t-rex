@@ -1,9 +1,20 @@
-<h1>Hi</h1>
+<div class="container-index">
 
-<% @dinosaurs.each do |dinosaur| %>
-  <li><%= link_to dinosaur.name, dinosaur_path(dinosaur) %></li>
-  <p><%= dinosaur.age %></p>
-  <p><%= dinosaur.description %></p>
-<% end %>
+  <div class="row">
+    <% @dinosaurs.each do |dinosaur| %>
+      <div class="col-12 col-sm-6 col-md-4 mb-3">
+      <img class= "card-img" src="https://pbs.twimg.com/media/D5Lwt8pW4AA44Vp?format=jpg&name=large" alt="dino">
+        <div class="card">
+          <%= link_to dinosaur.name, dinosaur_path(dinosaur) %>
+            <%= dinosaur.age %>
+            <%= dinosaur.description %>
+          </div>
+      </div>
+        <% end %>
+  </div>
 
-<%= link_to "Create a new dinosaur", new_dinosaur_path %>
+
+
+  <div class="row">
+  <%= link_to "Create a new dinosaur", new_dinosaur_path %>
+  </div>
