@@ -1,7 +1,7 @@
 class CreateBookings < ActiveRecord::Migration[7.0]
   def change
     create_table :bookings do |t|
-      t.boolean :confirmation_status
+      t.boolean :confirmation_status, default: false
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

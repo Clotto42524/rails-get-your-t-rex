@@ -1,1 +1,43 @@
-<h1>Your Bookings</h1>
+<div class="container">
+  <h2>Your Requested Bookings</h2>
+</div>
+
+<div class="container">
+  <% @requested_bookings.each do |booking| %>
+  <div class="card">
+    <%=  "#{booking.dinosaur.user.email} has requested to book #{booking.dinosaur.name}"  %>
+    <div>
+      <%= link_to "Approve", dinosaur_booking_path(booking.dinosaur.id, booking.id), data: { turbo_method: :patch, turbo_confirm: "Are you sure?" }, class: "btn btn-primary" %>
+      <%= link_to "Decline", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-warning" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<hr>
+
+<div class="container">
+  <h2>Your Reserved Bookings</h2>
+</div>
+
+<div class="container">
+    <% @reserved_bookings.each do |booking| %>
+  <div class="card">
+    <%= "You have booked #{booking.dinosaur.name}"  %>
+  </div>
+  <% end %>
+</div>
+
+<hr>
+
+<div class="container">
+  <h2>Your Dinosaurs</h2>
+  <ul> <% @dinosaurs.each do |dinosaur| %>
+    <li><%= link_to dinosaur.name, dinosaur %></li>
+  <% end %>
+  </ul>
+</div>
+
+<div class="container">
+<%= link_to "Back to dinosaurs", dinosaurs_path %>
+</div>
