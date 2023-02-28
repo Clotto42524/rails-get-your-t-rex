@@ -1,5 +1,6 @@
 class DinosaursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_dinosaur, only: [:show, :destroy]
 
   def index
     @dinosaurs = Dinosaur.all
@@ -23,9 +24,18 @@ class DinosaursController < ApplicationController
     end
   end
 
+  def destroy
+    @dinosaur.destroy
+    redirect_to dinosaurs_path, status: :see_other
+  end
+
   private
 
   def dinosaur_params
     params.require(:dinosaur).permit(:name, :description, :age, :photo)
+  end
+
+  def set_dinosaur
+    @dinosaur = Dinosaur.find(params[:id])
   end
 end
