@@ -13,6 +13,7 @@ class DinosaursController < ApplicationController
 
   def create
     @dinosaur = Dinosaur.new(dinosaur_params)
+    @dinosaur.user = current_user
     if @dinosaur.save
       redirect_to dinosaurs_path
     else
