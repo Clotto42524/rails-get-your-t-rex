@@ -1,6 +1,6 @@
 class DinosaursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_dinosaur, only: [:show]
+  before_action :set_dinosaur, only: [:show, :destroy]
 
   def index
     @dinosaurs = Dinosaur.all
@@ -22,6 +22,11 @@ class DinosaursController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @dinosaur.destroy
+    redirect_to dinosaurs_path, status: :see_other
   end
 
   private
