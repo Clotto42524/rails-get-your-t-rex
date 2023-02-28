@@ -1,11 +1,13 @@
 class DinosaursController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_dinosaur, only: [:show]
 
   def index
     @dinosaurs = Dinosaur.all
   end
 
   def show
+
   end
 
   def new
@@ -26,5 +28,9 @@ class DinosaursController < ApplicationController
 
   def dinosaur_params
     params.require(:dinosaur).permit(:name, :description, :age, :photo)
+  end
+
+  def set_dinosaur
+    @dinosaur = Dinosaur.find(params[:id])
   end
 end
