@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root to: "pages#home"
   get "/dashboard", to: "pages#dashboard"
-  resources :dinosaurs, only: [:index, :new, :create] do
+  resources :dinosaurs, only: [:index, :new, :create, :show] do
     resources :bookings, only: [:new, :create, :update]
   end
 end
