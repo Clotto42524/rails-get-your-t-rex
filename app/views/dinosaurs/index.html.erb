@@ -2,6 +2,8 @@
 
 <% @dinosaurs.each do |dinosaur| %>
   <li><%= dinosaur.name %></li>
-  <li><%= dinosaur.age %></li>
-  <li><%= dinosaur.description %></li>
+  <p><%= dinosaur.age %></p>
+  <p><%= dinosaur.description %></p>
 <% end %>
+
+<%= link_to "Create a new dinosaur", new_dinosaur_path %>
