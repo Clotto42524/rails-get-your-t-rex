@@ -1,37 +1,58 @@
 .container-show {
   margin: 0 auto;
   max-width: 1200px;
-  background-color: red;
+  background-color:rgb(251,238,193);
+  border: 2px solid;
   // display: flex;
 }
 
 .title {
-  background-color: blue;
-  border: 1px solid
+  background-color: rgb(251,238,193);
+  text-align: center;
+  color: rgb(101,157,189);;
 }
 
 .row {
-  background-color: yellow;
-  border: 1px solid
+  background-color:rgb(251,238,193);
+  border-radius: 5px;
 }
 
 #top {
   background-color: black;
   padding: 15px;
-  border: 1px solid
 }
 
 #photo {
-  background-color: green;
+  background-color: rgb(251,238,193);
   border: 1px solid
 }
 
 #form {
-  background-color: aqua;
-  border: 1px solid
+  background-color: rgb(101,157,189);
+  text-align: center;
+  vertical-align: bottom;
+  border-radius: 24px;
 }
 
 a {
   text-decoration: none;
   color: black;
+  text-align: center;
+}
+
+#links {
+  text-align: center;
+}
+
+
+.btn-delete {
+  color:rgb(255, 255, 255);
+  background-color: rgb(101,157,189);
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
