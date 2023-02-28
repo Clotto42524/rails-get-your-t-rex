@@ -1,1 +1,7 @@
 <h1>Hi</h1>
+
+<% @dinosaurs.each do |dinosaur| %>
+  <li><%= dinosaur.name %></li>
+  <li><%= dinosaur.age %></li>
+  <li><%= dinosaur.description %></li>
+<% end %>

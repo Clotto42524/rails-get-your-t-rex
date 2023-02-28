@@ -4,6 +4,6 @@ class Dinosaur < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
-  validates :photo, presence: true
+  # validates :photo, presence: true
   has_one_attached :photo
 end
