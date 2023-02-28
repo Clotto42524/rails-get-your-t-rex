@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :dinosaurs, only: [:index, :new, :create, :show, :destroy] do
     resources :bookings, only: [:new, :create, :update]
   end
+  resources :bookings, only: [:destroy]
 end

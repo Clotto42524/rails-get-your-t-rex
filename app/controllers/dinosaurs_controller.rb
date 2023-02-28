@@ -7,7 +7,7 @@ class DinosaursController < ApplicationController
   end
 
   def show
-    @dinosaurs = Dinosaur.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
