@@ -23,6 +23,6 @@ class DinosaursController < ApplicationController
   private
 
   def dinosaur_params
-    params.require(:dinosaur).permit(:name, :description, :age)
+    params.require(:dinosaur).permit(:name, :description, :age, :photo)
   end
 end
