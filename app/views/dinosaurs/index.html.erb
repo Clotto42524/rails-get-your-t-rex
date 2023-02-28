@@ -1,7 +1,7 @@
 <h1>Hi</h1>
 
 <% @dinosaurs.each do |dinosaur| %>
-  <li><%= dinosaur.name %></li>
+  <li><%= link_to dinosaur.name, dinosaurs_path(dinosaur) %></li>
   <p><%= dinosaur.age %></p>
   <p><%= dinosaur.description %></p>
 <% end %>
