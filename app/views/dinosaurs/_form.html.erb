@@ -1,0 +1,7 @@
+<%= simple_form_for(dinosaur) do |f| %>
+<%= f.input :name %>
+<%= f.input :description %>
+<%= f.input :photo, as: :file %>
+<%= f.input :age %>
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
