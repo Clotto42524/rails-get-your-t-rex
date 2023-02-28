@@ -16,4 +16,3 @@ Dinosaur.create(name: "Helmut", description: "Helmut likes long walks in the for
 
 
 puts "done"
-
