@@ -1,9 +1,15 @@
-<h1>Hi</h1>
+<div class="container">
+  <h1>Our dinosaur offering</h1>
+</div>
 
-<% @dinosaurs.each do |dinosaur| %>
-  <li><%= link_to dinosaur.name, dinosaur_path(dinosaur) %></li>
-  <p><%= dinosaur.age %></p>
-  <p><%= dinosaur.description %></p>
+<div class="container">
+  <% @dinosaurs.each do |dinosaur| %>
+    <li><%= link_to dinosaur.name, dinosaur_path(dinosaur) %></li>
+    <p><%= dinosaur.age %></p>
+    <p><%= dinosaur.description %></p>
 <% end %>
+</div>
 
-<%= link_to "Create a new dinosaur", new_dinosaur_path %>
+<div class="container">
+  <%= link_to "Create a new dinosaur", new_dinosaur_path %>
+</div>

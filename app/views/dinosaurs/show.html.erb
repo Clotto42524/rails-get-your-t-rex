@@ -15,12 +15,12 @@
       <img src= "https://media.wired.com/photos/5f0f3091344cff748529ad9c/4:3/w_1800,h_1350,c_limit/how-to-escape-dinosaurs-elena-lacey.jpg"  alt="Dinosaur" width="900" height="400">
       </div>
       <div id="form" class="col-sm-4">
-      <p>Booking form here</p>
+        <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
       </div>
     </div>
   </div>
 
-  <div id="reviews" class="row">
+  <div id="details" class="row">
     <div class="col-sm-12">
         <ul>
           <li>Name: <%= @dinosaur.name %></li>
