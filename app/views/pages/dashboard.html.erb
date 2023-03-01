@@ -1,11 +1,9 @@
 <div class="container" id="dashboard">
   <h1>Your Dashboard</h1>
 
+  <hr>
 
   <h3>Your Requested Bookings</h3>
-
-
-
   <% @requested_bookings.each do |booking| %>
   <div class="card">
     <%=  "#{booking.dinosaur.user.email} has requested to book #{booking.dinosaur.name}"  %>
@@ -16,31 +14,30 @@
   </div>
   <% end %>
 
-
-<hr>
-
+  <hr>
 
   <h3>Your Reserved Bookings</h3>
-
-
-
-    <% @reserved_bookings.each do |booking| %>
-  <div class="card">
-    <%= "You have booked #{booking.dinosaur.name}"  %>
-  </div>
+  <% @reserved_bookings.each do |booking| %>
+    <div class="card">
+      <%= "You have booked #{booking.dinosaur.name}" %>
+    </div>
   <% end %>
-
 
 <hr>
 
-
   <h3>Your Dinosaurs</h3>
-  <ul> <% @dinosaurs.each do |dinosaur| %>
-    <li><%= link_to dinosaur.name, dinosaur %></li>
-  <% end %>
-  </ul>
+  <div class="row">
+    <% @dinosaurs.each do |dinosaur| %>
+      <div id="card-dino" class="col-12 col-sm-6 col-md-4 mb-3 mr-1">
+        <img class= "card-img" src="<%= (dinosaur.photo.attached? ? cl_image_path(dinosaur.photo.key) : asset_path("default_dino.jpeg")) %>">
+          <div class="card-content my-2 p-3">
+              <p><strong><%=link_to dinosaur.name, dinosaur_path(dinosaur), class:"text-decoration-none"%></strong></p>
+              <p><strong>Age:</strong> <%= dinosaur.age %> </p>
+              <p><strong>About:</strong> <%=dinosaur.description %> </p>
+          </div>
+      </div>
+    <% end %>
+  </div>
 
-
-
-  <%= link_to "Back to dinos", dinosaurs_path, class: "btn btn-success" %>
+  <p><%= link_to "Back to dinos", dinosaurs_path, class: "btn btn-success" %></p>
 </div>
