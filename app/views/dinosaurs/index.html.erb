@@ -2,6 +2,7 @@
   <h1>Our dinosaur offering</h1>
 </div>
 
+<div class="container">
   <div class="row">
     <% @dinosaurs.each do |dinosaur| %>
       <div id="card-dino" class="col-12 col-sm-6 col-md-4 mb-3 mr-1">
@@ -14,12 +15,4 @@
       </div>
     <% end %>
   </div>
-
-
-
-  <div id="buttonCreate" class="row">
-  <div class="col">
-    <p><%= link_to "Create a new dinosaur", new_dinosaur_path %><p>
-  </div>
-
 </div>
