@@ -23,18 +23,20 @@
   <div id="details" class="row">
     <div class="col-sm-12">
         <ul>
-          <li>Name: <%= @dinosaur.name %></li>
-          <li>Description: <%= @dinosaur.description %></li>
-          <li> Age: <%= @dinosaur.age %></li>
+          <li><strong>Name: </strong><%= @dinosaur.name %></li>
+          <li><strong>Description: </strong><%= @dinosaur.description %></li>
+          <li><strong> Age: </strong><%= @dinosaur.age %></li>
         </ul>
     </div>
   </div>
 
   <div id="links" class="row">
     <div class="col-sm-12">
-      <p><%= link_to "Back to dinos", dinosaurs_path %>
-      <p><%= link_to "Delete this dinosaur", dinosaur_path(@dinosaur),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+    <ul>
+      <li class="btn btn-delete"><i class="fa-solid fa-backward"></i><%= link_to " Back to Dinos", dinosaurs_path %></li>
+      <li class="btn btn-delete"><i class="fas fa-trash"></i><%= link_to " Delete this dinosaur", dinosaur_path(@dinosaur),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+    </ul>
     </div>
   </div>
 
