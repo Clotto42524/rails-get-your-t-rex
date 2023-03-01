@@ -1,9 +1,29 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('assets/Banner_1.png');">
-  <div class="banner_content">
-    <h1>Welcome to <strong>"Get Your T-Rex"</strong>!</h1>
-    <p>Are you ready for a new experience? Do you want to impress others?</p>
-    <p>Then book a Dinosaur here!</p>
-    <%= link_to "See our Dinos", dinosaurs_path, class: "btn btn-gradient" %>
+
+<div class = "container-banner">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('assets/Banner_1.png');">
+    <div class="banner_content">
+      <h1>Welcome to <strong>"Get Your T-Rex"</strong>!</h1>
+      <p>Are you ready for a new experience? Do you want to impress others?</p>
+      <p>Then book a Dinosaur here!</p>
+      <%= link_to "See our Dinos", dinosaurs_path, class: "btn btn-gradient" %>
+    </div>
+</div>
+</div>
+
+<div class="container" id="home-body">
+
+ <div class="row">
+    <div class="col-12 col-sm-6 col-md-6" id="specialoffer">
+      <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.dinosaurpictures.org/Gualicho/image_4026_1e-Gualicho-shinyae_7f96.jpg)">
+          Special Offer:
+          <br>Soon to be extinct!
+      </div>
+    </div>
+
+     <div class="col-12 col-sm-6 col-md-6" id="babys">
+        <div class="card-category" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.amnh.org/var/ezflow_site/storage/images/media/amnh/images/exhibitions/past-exhibitions/worlds-largest-dinosaurs/sauropod-babies/sauropod-dinosaur-egg-baby-1024-512/4742312-1-eng-US/sauropod-dinosaur-egg-baby-1024-512.jpg)">
+        Babys of the month
+        </div>
+    </div>
   </div>
-<div class="container">
 </div>
