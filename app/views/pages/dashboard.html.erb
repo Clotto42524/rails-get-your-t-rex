@@ -1,8 +1,11 @@
-<div class="container">
-  <h2>Your Requested Bookings</h2>
-</div>
+<div class="container" id="dashboard">
+  <h1>Your Dashboard</h1>
 
-<div class="container">
+
+  <h3>Your Requested Bookings</h3>
+
+
+
   <% @requested_bookings.each do |booking| %>
   <div class="card">
     <%=  "#{booking.dinosaur.user.email} has requested to book #{booking.dinosaur.name}"  %>
@@ -12,32 +15,32 @@
     </div>
   </div>
   <% end %>
-</div>
+
 
 <hr>
 
-<div class="container">
-  <h2>Your Reserved Bookings</h2>
-</div>
 
-<div class="container">
+  <h3>Your Reserved Bookings</h3>
+
+
+
     <% @reserved_bookings.each do |booking| %>
   <div class="card">
     <%= "You have booked #{booking.dinosaur.name}"  %>
   </div>
   <% end %>
-</div>
+
 
 <hr>
 
-<div class="container">
-  <h2>Your Dinosaurs</h2>
+
+  <h3>Your Dinosaurs</h3>
   <ul> <% @dinosaurs.each do |dinosaur| %>
     <li><%= link_to dinosaur.name, dinosaur %></li>
   <% end %>
   </ul>
-</div>
 
-<div class="container">
-<%= link_to "Back to dinosaurs", dinosaurs_path %>
+
+
+  <%= link_to "Back to dinos", dinosaurs_path, class: "btn btn-success" %>
 </div>
