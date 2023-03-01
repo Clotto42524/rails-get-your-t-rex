@@ -1,16 +1,41 @@
-<div class="container">
-  <h1><%= @dinosaur.name %></h1>
-</div>
+<div class="container-show">
 
-<div class="container">
-  <ul>
-    <li><%= @dinosaur.description %></li>
-    <li><%= @dinosaur.age %></li>
-  </ul>
-</div>
+  <div id="header" class="row">
+    <div class="col-sm-12">
+      <div class="title">
+        <h1><%= @dinosaur.name %></h1>
+      </div>
 
-<div class="container">
-  <p><%= link_to "Back to dinos", dinosaurs_path %>
-  <p><%= link_to "Delete this dinosaur", dinosaur_path(@dinosaur),
+    </div>
+  </div>
+
+  <div>
+    <div id="top" class="row">
+      <div id="photo" class="col-sm-8">
+      <img src= "https://media.wired.com/photos/5f0f3091344cff748529ad9c/4:3/w_1800,h_1350,c_limit/how-to-escape-dinosaurs-elena-lacey.jpg"  alt="Dinosaur" width="900" height="400">
+      </div>
+      <div id="form" class="col-sm-4">
+        <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
+      </div>
+    </div>
+  </div>
+
+  <div id="details" class="row">
+    <div class="col-sm-12">
+        <ul>
+          <li>Name: <%= @dinosaur.name %></li>
+          <li>Description: <%= @dinosaur.description %></li>
+          <li> Age: <%= @dinosaur.age %></li>
+        </ul>
+    </div>
+  </div>
+
+  <div id="links" class="row">
+    <div class="col-sm-12">
+      <p><%= link_to "Back to dinos", dinosaurs_path %>
+      <p><%= link_to "Delete this dinosaur", dinosaur_path(@dinosaur),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+    </div>
+  </div>
+
 </div>
