@@ -1,34 +1,31 @@
-.container-show {
+.container {
   margin: 0 auto;
   max-width: 1200px;
-  background-color:rgb(251,238,193);
-  border: 2px solid;
   // display: flex;
 }
 
 .title {
-  background-color: rgb(251,238,193);
+  background-color: rgb(222,223,215);
   text-align: center;
   color: rgb(101,157,189);;
 }
 
 .row {
-  background-color:rgb(251,238,193);
+  background-color:rgb(222,223,215);
   border-radius: 5px;
+  padding: 25px;
 }
 
 #top {
-  background-color: black;
   padding: 15px;
 }
 
 #photo {
-  background-color: rgb(251,238,193);
-  border: 1px solid
+  background-color: rgb(222,223,215);
 }
 
 #form {
-  background-color: rgb(101,157,189);
+  background-color:rgb(166, 195, 232);
   text-align: center;
   vertical-align: bottom;
   border-radius: 24px;
