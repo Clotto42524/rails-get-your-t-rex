@@ -11,22 +11,18 @@
 
   <div>
     <div id="top" class="row">
-      <div id="photo" class="col-sm-8">
-      <img src= "https://media.wired.com/photos/5f0f3091344cff748529ad9c/4:3/w_1800,h_1350,c_limit/how-to-escape-dinosaurs-elena-lacey.jpg"  alt="Dinosaur" width="900" height="400">
+      <div id="photo" class="col-sm-12 mb-2">
+      <img class= "card-img" src="<%= (@dinosaur.photo.attached? ? cl_image_path(@dinosaur.photo.key) : asset_path("default_dino.jpeg")) %>">
       </div>
-      <div id="form" class="col-sm-4">
         <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
-      </div>
     </div>
   </div>
 
   <div id="details" class="row">
-    <div class="col-sm-12">
-        <ul>
-          <li><strong>Name: </strong><%= @dinosaur.name %></li>
-          <li><strong> Age: </strong><%= @dinosaur.age %></li>
-          <li><strong>Description: </strong><%= @dinosaur.description %></li>
-        </ul>
+    <div id="details-row" class="col-sm-12">
+          <p><strong>Name: </strong><%= @dinosaur.name %></p>
+          <p><strong> Age: </strong><%= @dinosaur.age %></p>
+          <p><strong>Description: </strong><%= @dinosaur.description %></p>
     </div>
   </div>
 
