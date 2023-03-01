@@ -13,11 +13,28 @@
 .row {
   background-color:rgb(222,223,215);
   border-radius: 5px;
-  padding: 25px;
+  padding: 10px;
+  margin: 8px;
+  margin-top: 0px;
+}
+
+#details {
+  padding: 0px;
+  margin: 0px;
 }
 
 #top {
   padding: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border-radius: 5px;
 }
 
 #photo {
@@ -39,6 +56,8 @@ a {
 
 #links {
   text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 
@@ -56,4 +75,28 @@ a {
 
 .btn-delete :hover {
   border: 1px solid #3a3939;
+}
+
+.col-sm-12 {
+  margin: 0px;
+}
+
+#header {
+  padding: 0px;
+  margin: 0px;
+}
+
+.btn{
+  border-radius: 5px;
+}
+
+#details-row {
+  margin: 0px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 16px;
+}
+
+p {
+  margin: 8px;
 }
