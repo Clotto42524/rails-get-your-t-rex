@@ -17,7 +17,7 @@
 }
 
 #top {
-  padding: 15px;
+  padding: 5px;
 }
 
 #photo {
@@ -25,7 +25,7 @@
 }
 
 #form {
-  background-color:rgb(166, 195, 232);
+  background-color:rgb(101,157,189);
   text-align: center;
   vertical-align: bottom;
   border-radius: 24px;
@@ -45,11 +45,15 @@ a {
 .btn-delete {
   color:rgb(255, 255, 255);
   background-color: rgb(101,157,189);
-  border: 1px solid #4A4A4A;
+  border: 1px solid #3a3939;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.6;
+  opacity: 0.7;
   transition: opacity 0.3s ease;
   cursor: pointer;
+}
+
+.btn-delete :hover {
+  border: 1px solid #3a3939;
 }
