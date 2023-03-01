@@ -1,2 +1,21 @@
 // Specific CSS for your home-page
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white !important;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 60px;
+}
 
+#home-body {
+  margin-top: 20px;
+}
