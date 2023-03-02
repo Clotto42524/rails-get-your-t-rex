@@ -59,7 +59,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_120008) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.bigint "review_id"
+    t.index ["review_id"], name: "index_dinosaurs_on_review_id"
     t.index ["user_id"], name: "index_dinosaurs_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.float "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,5 +89,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_120008) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "dinosaurs"
   add_foreign_key "bookings", "users"
+  add_foreign_key "dinosaurs", "reviews"
   add_foreign_key "dinosaurs", "users"
 end
