@@ -36,18 +36,18 @@
 }
 
 .btn-home {
-  color: #4F6D53;
-  background-color: rgba(255, 255, 255, 0.605);
+  color: white;
+  background-color: #4F6D53;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
   opacity: 0.6;
   transition: opacity 0.3s ease;
   margin-right: 8px;
+  opacity:1;
+
 }
 
 .btn-home:hover {
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.605)
+  background-color: #4e6d538e;
 }
-
