@@ -1,16 +1,22 @@
+
 <div class="container">
-  <h1 id="title-index">Our dinosaur offering</h1>
 
   <div class="row">
+    <h1 id="title-index" class="p-2">Our Dinosaurs</h1>
+
     <% @dinosaurs.each do |dinosaur| %>
-      <div id="card-dino" class="col-12 col-sm-6 col-md-4 mb-3 mr-1">
-        <img class= "card-img" src="<%= (dinosaur.photo.attached? ? cl_image_path(dinosaur.photo.key) : asset_path("default_dino.jpeg")) %>">
-          <div class="card-content mb-2 p-3">
-              <p><strong><%=link_to dinosaur.name, dinosaur_path(dinosaur), class:"text-decoration-none"%></strong></p>
-              <p><strong>Age:</strong> <%= dinosaur.age %> </p>
-              <p><strong>About:</strong> <%=dinosaur.description %> </p>
-          </div>
+      <div class="card-deck col-12 col-sm-6 col-md-4 mb-3 my-1">
+        <img class= "card-img-small" src="<%= (dinosaur.photo.attached? ? cl_image_path(dinosaur.photo.key) : asset_path("default_dino.jpeg"))%>">
+              <%# <img class= "card-img" src="https://images.dinosaurpictures.org/090714-nothronychus-02_8e4b.jpg"> %>
+            <div class="card-body mb-2 p-3">
+              <div class="card-text">
+                  <p><strong><%=link_to dinosaur.name, dinosaur_path(dinosaur), class:"text-decoration-none"%></strong></p>
+                  <p><strong>Age:</strong> <%= dinosaur.age %> </p>
+                  <p><strong>About:</strong> <%=dinosaur.description %> </p>
+              </div>
+            </div>
       </div>
     <% end %>
-  </div>
+</div>
+
 </div>
