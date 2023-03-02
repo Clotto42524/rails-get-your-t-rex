@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.dinosaur = @dinosaur
     @booking.user = current_user
+    @booking.confirmation_status = false
     if @booking.save
       redirect_to dashboard_path
     else
@@ -18,7 +19,6 @@ class BookingsController < ApplicationController
   end
 
   def update
-
     @booking.confirmation_status = true
     @booking.save
     redirect_to dashboard_path
