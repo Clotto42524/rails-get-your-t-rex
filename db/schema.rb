@@ -55,10 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_152151) do
   create_table "dinosaurs", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.string "age"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "age"
-    t.string "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_dinosaurs_on_user_id"
   end

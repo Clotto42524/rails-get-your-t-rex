@@ -1,9 +1,5 @@
 class ReviewsController < ApplicationController
 
-  def index
-
-  end
-
   def new
     @review = Review.new
     @dinosaur = Dinosaur.find(params[:dinosaur_id])
