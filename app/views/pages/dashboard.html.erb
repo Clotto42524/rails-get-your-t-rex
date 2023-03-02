@@ -1,31 +1,5 @@
 <div class="container" id="dashboard">
-  <h1>Your Dashboard</h1>
-
-  <hr>
-
-  <h3>Your Requested Bookings</h3>
-  <% @requested_bookings.each do |booking| %>
-  <div class="card">
-    <%=  "#{booking.dinosaur.user.email} has requested to book #{booking.dinosaur.name}"  %>
-    <div>
-      <%= link_to "Approve", dinosaur_booking_path(booking.dinosaur.id, booking.id), data: { turbo_method: :patch, turbo_confirm: "Are you sure?" }, class: "btn btn-success" %>
-      <%= link_to "Decline", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
-    </div>
-  </div>
-  <% end %>
-
-  <hr>
-
-  <h3>Your Reserved Bookings</h3>
-  <% @reserved_bookings.each do |booking| %>
-    <div class="card">
-      <%= "You have booked #{booking.dinosaur.name}" %>
-    </div>
-  <% end %>
-
-<hr>
-
-  <h3>Your Dinosaurs</h3>
+  <h1>Your Dinosaurs</h1>
   <div class="row">
     <% @dinosaurs.each do |dinosaur| %>
       <div id="card-dino" class="col-12 col-sm-6 col-md-4 mb-3 mr-1">
