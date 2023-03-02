@@ -1,49 +1,20 @@
 <div class="container">
-  <div class="container-show m-1">
-    <div id="links" class="d-flex flex-row-reverse">
-      <div class="col-sm-12">
-        <p class="btn btn-back justify-content-end"><i class="fa-solid fa-backward"></i><%= link_to " Back to Dinos", dinosaurs_path %></p>
-        <p class="btn btn-delete"><i class="fas fa-trash"></i><%= link_to " Delete this dinosaur", dinosaur_path(@dinosaur),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+  <div class="row m-5">
+    <div class="container-show col-sm-6">
+      <div id="photo">
+        <img class= "card-img-big" src="<%= (@dinosaur.photo.attached? ? cl_image_path(@dinosaur.photo.key) : asset_path("default_dino.jpeg")) %>">
+        <p id="user">Dino belongs to: <%=@dinosaur.user.email %></p>
       </div>
     </div>
 
-  <!--<div id="header" class="row">
-    <div class="col-sm-12">
-      <div class="title">
-        <h1><%= @dinosaur.name %></h1> %>
-      </div>
-
-    </div>
-  </div>-->
-
-
-    <div id="top" class="row">
-      <div id="photo" class="col-sm-12">
-      <p>Dino belongs to: USER???</p>
-      <img class= "card-img-big" src="<%= (@dinosaur.photo.attached? ? cl_image_path(@dinosaur.photo.key) : asset_path("default_dino.jpeg")) %>">
-      </div>
+    <div class="container-show col-sm-6">
+      <div id="details-row">
+        <p><strong>Name: </strong><%= @dinosaur.name %></p>
+        <p><strong> Age: </strong><%= @dinosaur.age %></p>
+        <p><strong>Description: </strong><%= @dinosaur.description %></p>
         <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
-    </div>
-
-    <div id="details" class="row">
-      <div id="details-row" class="col-sm-12 pr-2">
-            <p><strong>Name: </strong><%= @dinosaur.name %></p>
-            <p><strong> Age: </strong><%= @dinosaur.age %></p>
-            <p><strong>Description: </strong><%= @dinosaur.description %></p>
-      </div>
-    </div>
-
-    <div id="links" class="row">
-      <div class="col-sm-12">
-        <ul>
-          <!--<li class="btn btn-delete"><i class="fa-solid fa-backward"></i><%= link_to " Back to Dinos", dinosaurs_path %></li>
-          <li class="btn btn-delete"><i class="fas fa-trash"></i><%= link_to " Delete this dinosaur", dinosaur_path(@dinosaur),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>-->
-        </ul>
       </div>
     </div>
 
   </div>
-
 </div>
