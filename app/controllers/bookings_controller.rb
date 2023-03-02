@@ -11,10 +11,10 @@ class BookingsController < ApplicationController
     @booking.dinosaur = @dinosaur
     @booking.user = current_user
     @booking.confirmation_status = false
-    if @booking.save
-      redirect_to dashboard_path
+    if @booking.save!
+      redirect_to bookings_path
     else
-      render :show, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
