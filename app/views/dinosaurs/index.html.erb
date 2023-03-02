@@ -10,7 +10,7 @@
               <%# <img class= "card-img" src="https://images.dinosaurpictures.org/090714-nothronychus-02_8e4b.jpg"> %>
             <div class="card-body mb-2 p-3">
               <div class="card-text">
-                  <p><strong><%=link_to dinosaur.name, dinosaur_path(dinosaur), class:"text-decoration-none"%></strong></p>
+                  <h4><strong><%=link_to dinosaur.name, dinosaur_path(dinosaur), class:"text-decoration-none"%></strong></h4>
                   <p><strong>Age:</strong> <%= dinosaur.age %> </p>
                   <p><strong>About:</strong> <%=dinosaur.description %> </p>
               </div>
