@@ -1,11 +1,12 @@
 class ReviewsController < ApplicationController
 
-  def
-    
+  def index
+
   end
 
   def new
     @review = Review.new
+    @dinosaur = Dinosaur.find(params[:dinosaur_id])
   end
 
   def create

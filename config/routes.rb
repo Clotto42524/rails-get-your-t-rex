@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get "/bookings", to: "pages#bookings"
   resources :dinosaurs, only: [:index, :new, :create, :show, :destroy] do
     resources :bookings, only: [:new, :create, :update]
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :index]
   end
   resources :bookings, only: [:destroy]
 end
