@@ -1,7 +1,6 @@
-.container {
-  margin: 0 auto;
-  max-width: 1200px;
-  // display: flex;
+.container-show {
+  background-color: rgba(245, 245, 245, 0.662);
+  max-width: fit-content;
 }
 
 .title {
@@ -11,7 +10,6 @@
 }
 
 .row {
-  background-color:rgb(222,223,215);
   border-radius: 5px;
   padding: 10px;
   margin: 8px;
@@ -29,9 +27,7 @@
   margin-bottom: 10px;
 }
 
-#photo {
-  background-color: rgb(222,223,215);
-}
+
 
 #form {
   background-color:rgb(101,157,189);
@@ -53,20 +49,39 @@ a {
 }
 
 
-.btn-delete {
-  color:rgb(255, 255, 255);
-  background-color: rgb(101,157,189);
-  border: 1px solid #3a3939;
+.btn-back {
+  color: #4F6D53;
+  background-color: rgba(255, 255, 255, 0.605);
+  //border: 1px solid #3a3939;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
-  opacity: 0.7;
+  opacity: 0.6;
   transition: opacity 0.3s ease;
   cursor: pointer;
 }
 
+.btn-back :hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.605)
+}
+
+.btn-delete {
+  color: #4F6D53;
+  background-color: rgba(255, 255, 255, 0.605);
+  //border: 1px solid #3a3939;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  text-align: end;
+  cursor: pointer;
+}
+
 .btn-delete :hover {
-  border: 1px solid #3a3939;
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.605)
 }
 
 .col-sm-12 {
