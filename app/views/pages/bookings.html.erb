@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Your Bookings</h1>
+
+<h3>Bookings you've requested</h3>
+  <% @requested_bookings.each do |booking| %>
+  <div class="card">
+    <%=  "#{booking.dinosaur.user.email} has requested to book #{booking.dinosaur.name}"  %>
+    <div>
+      <%= link_to "Approve", dinosaur_booking_path(booking.dinosaur.id, booking.id), data: { turbo_method: :patch, turbo_confirm: "Are you sure?" }, class: "btn btn-success" %>
+      <%= link_to "Decline", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    </div>
+  </div>
+  <% end %>
+<br>
+  <h3>Bookings you've reserved</h3>
+  <% @reserved_bookings.each do |booking| %>
+    <div class="card">
+      <%= "You have booked #{booking.dinosaur.name}" %>
+    </div>
+  <% end %>
+</div>
