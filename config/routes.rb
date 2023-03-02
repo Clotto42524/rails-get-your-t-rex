@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard"
   resources :dinosaurs, only: [:index, :new, :create, :show, :destroy] do
     resources :bookings, only: [:new, :create, :update]
+    resources :reviews, only: [:new, :create]
   end
   resources :bookings, only: [:destroy]
 end
