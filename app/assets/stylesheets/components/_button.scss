@@ -1,22 +1,3 @@
-// .btn-gradient {
-  // color: #4F6D53;
-  // background-color: rgba(255, 255, 255, 0.605);
-  // padding: 8px 24px;
-  // border-radius: 4px;
-  // font-weight: bold;
-  //background: linear-gradient (#4F6D53, rgba(255, 255, 255, 0.605));
-  // background: linear-gradient(#167FFB, #0F60C4);
-  //transition: background 0.3s ease;
-  // border: 1px solid #0F60C4;
-//}
-
-// .btn-gradient:hover {
-  // background: linear-gradient (#4F6D53, rgba(255, 255, 255, 0.605));
-  // background: linear-gradient(#147EFF, #0F67DA);
-  //color: white;
-  // color: #4F6D53;
-//}
-
 .btn-ghost {
   color: #4F6D53;
   //background-color: red;
@@ -51,3 +32,9 @@
 .btn-home:hover {
   background-color: #4e6d538e;
 }
+
+.btn-request {
+  background-color: white;
+  color: #4F6D53;
+}
+

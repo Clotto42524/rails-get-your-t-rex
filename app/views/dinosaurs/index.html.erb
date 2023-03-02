@@ -11,9 +11,19 @@
             <div class="card-body mb-2 p-3">
               <div class="card-text">
                   <h4><strong><%=link_to dinosaur.name, dinosaur_path(dinosaur), class:"text-decoration-none"%></strong></h4>
-                  <p><strong>Age:</strong> <%= dinosaur.age %> </p>
-                  <p><strong>About:</strong> <%=dinosaur.description %> </p>
-                  <p><strong>Owner:</strong> <%=dinosaur.user.email %> </p>
+                  <p><strong>Age:</strong><%= dinosaur.age %></p>
+                  <p><strong>About:</strong><%=dinosaur.description %></p>
+                  <p><strong>Owner:</strong><%=dinosaur.user.email %></p>
+                  <% total_ratings = [] %>
+                    <% dinosaur.reviews.map do |review| %>
+                      <% total_ratings << review.rating %>
+                    <% end %>
+                    <% if total_ratings.count != 0  %>
+                      <% avg_rating = total_ratings.sum / total_ratings.count %>
+                      <p><strong>Average Rating: </strong><%= avg_rating %></p>
+                    <% else %>
+                      <p><strong>Average Rating: </strong>0</p>
+                    <% end %>
               </div>
             </div>
       </div>
