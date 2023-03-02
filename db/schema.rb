@@ -60,8 +60,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_152151) do
     t.string "age"
     t.string "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
     t.bigint "user_id", null: false
-    t.bigint "review_id"
-    t.index ["review_id"], name: "index_dinosaurs_on_review_id"
     t.index ["user_id"], name: "index_dinosaurs_on_user_id"
   end
 
@@ -92,7 +90,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_152151) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "dinosaurs"
   add_foreign_key "bookings", "users"
-  add_foreign_key "dinosaurs", "reviews"
   add_foreign_key "dinosaurs", "users"
   add_foreign_key "reviews", "dinosaurs"
 end
