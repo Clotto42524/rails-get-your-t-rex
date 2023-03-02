@@ -9,6 +9,8 @@ box-shadow: 0 0 5px rgba(0,0,0,0.2);
   text-align: center;
 }
 
-// .h1 {
-//   color: #669ebd !important;
-// }
+.card-img-big {
+  width: 50%;
+  height: 30vw;
+  object-fit: cover;
+}
