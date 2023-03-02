@@ -7,14 +7,31 @@
       </div>
     </div>
 
+    <!--<div id="links" class="row">
+      <div class="col-sm-12">
+        <ul>
+          <li class="btn btn-delete"><i class="fa-solid fa-backward"></i><%= link_to " Back to Dinos", dinosaurs_path %></li>
+          <li class="btn btn-delete"><i class="fas fa-trash"></i><%= link_to " Delete this dinosaur", dinosaur_path(@dinosaur),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
+        </ul>-->
+        
     <div class="container-show col-sm-6">
       <div id="details-row">
         <p><strong>Name: </strong><%= @dinosaur.name %></p>
         <p><strong> Age: </strong><%= @dinosaur.age %></p>
         <p><strong>Description: </strong><%= @dinosaur.description %></p>
         <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
+
       </div>
     </div>
-
   </div>
+   <div id="details" class="row">
+      <div id="details-row" class="col-sm-12 pr-2">
+        <h3>Reviews</h3>
+        <% @dinosaur.reviews.each do |review| %>
+        <p><strong>Rating: </strong><%= review.rating  %></p>
+        <p> <%= review.content %></p>
+        <% end  %>
+      </div>
+    </div>
 </div>
