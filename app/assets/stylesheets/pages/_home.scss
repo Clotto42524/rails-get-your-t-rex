@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
+#container-body {
+  padding: 20px;
+  margin-top: 20px;
+  background-color: whitesmoke;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -14,11 +20,6 @@
   border-radius: 3px;
   text-decoration: none;
   padding: 60px;
-}
-
-#home-body {
-  margin-top: 20px;
-  background-color: #4F6D53;
 }
 
 .card-content {
