@@ -9,6 +9,7 @@
               <p><strong><%=link_to dinosaur.name, dinosaur_path(dinosaur), class:"text-decoration-none"%></strong></p>
               <p><strong>Age:</strong> <%= dinosaur.age %> </p>
               <p><strong>About:</strong> <%=dinosaur.description %> </p>
+              <p><strong>Owner:</strong> <%=dinosaur.user.email %> </p>
           </div>
       </div>
     <% end %>
