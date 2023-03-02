@@ -20,7 +20,7 @@
 
     <div id="top" class="row">
       <div id="photo" class="col-sm-12">
-      <p>Dino belongs to: USER???</p>
+      <p>Dino belongs to: <%= @dinosaur.user.email %></p>
       <img class= "card-img-big" src="<%= (@dinosaur.photo.attached? ? cl_image_path(@dinosaur.photo.key) : asset_path("default_dino.jpeg")) %>">
       </div>
         <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
