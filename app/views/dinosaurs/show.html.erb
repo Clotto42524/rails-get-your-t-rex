@@ -13,6 +13,7 @@
           <p><strong>Name: </strong><%= @dinosaur.name %></p>
           <p><strong> Age: </strong><%= @dinosaur.age %></p>
           <p><strong>Description: </strong><%= @dinosaur.description %></p>
+          <p><strong>Average Rating: </strong><%= @avg_rating %></p>
           <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
           <br>
           <%= link_to "Leave a review", new_dinosaur_review_path(@dinosaur), class: "btn btn-request" %>

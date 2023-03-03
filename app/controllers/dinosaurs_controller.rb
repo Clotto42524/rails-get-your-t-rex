@@ -8,6 +8,15 @@ class DinosaursController < ApplicationController
 
   def show
     @booking = Booking.new
+    total_ratings = []
+    @dinosaur.reviews.map do |review|
+      total_ratings << review.rating
+    end
+    if total_ratings.count.positive?
+      @avg_rating = total_ratings.sum / total_ratings.count
+    else
+      @avg_rating = 0
+    end
   end
 
   def new
