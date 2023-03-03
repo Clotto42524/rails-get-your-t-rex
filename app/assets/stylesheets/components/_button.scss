@@ -33,8 +33,40 @@
   background-color: #4e6d538e;
 }
 
-.btn-request {
-  background-color: white;
-  color: #4F6D53;
+
+.btn-approve {
+  color: white;
+  background-color:  #37783f98;
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: solid 1px;
 }
 
+
+.btn-approve:hover {
+  color: white;
+  background-color:  #0e6f1998;
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: solid 1px;
+}
+
+.btn-decline {
+  color: white;
+  background-color:  rgba(212, 93, 93, 0.662);
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: solid 1px;
+}
+
+.btn-decline:hover {
+  color: white;
+  background-color:  rgba(211, 52, 52, 0.662);
+  padding: 8px 24px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: solid 1px;
+}
