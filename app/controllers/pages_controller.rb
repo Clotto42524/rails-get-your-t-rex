@@ -17,6 +17,7 @@ class PagesController < ApplicationController
   def bookings
     @user = current_user
     @bookings = Booking.all
+    @pending_reserved_bookings = @user.bookings.where(confirmation_status: false)
     @requested_bookings = @bookings.select do |booking|
       booking.dinosaur.user == @user && booking.confirmation_status == false
     end
