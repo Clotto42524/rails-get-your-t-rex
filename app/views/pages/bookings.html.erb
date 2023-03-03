@@ -1,37 +1,52 @@
 <div class="container">
-  <h2 class="p-4">Your Bookings</h2>
+  <h2 class="p-4">My Bookings</h2>
 
-  <h3>Requested Bookings</h3>
+<div class="row my-5 py-4">
+  <div class="co-12 col-sm-6 col-md-6 mb-3" id="requestedbooking">
+  <h4>Requested Bookings</h4>
+    <div class="notrequested">
     <% if @requested_bookings.count == 0 %>
-      <p><%= "No one has requested any bookings" %></p>
+      <p><%= "No one has requested any bookings yet :(" %></p>
+    </div>
+    <div class="someonerequest">
     <% else %>
       <% @requested_bookings.each do |booking| %>
-      <div class="card">
-        <%= "#{booking.user.email} has requested to book #{booking.dinosaur.name}" %>
-        <div>
-          <%= link_to "Approve", dinosaur_booking_path(booking.dinosaur.id, booking.id), data: { turbo_method: :patch, turbo_confirm: "Are you sure?" }, class: "btn btn-success" %>
-          <%= link_to "Decline", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
-        </div>
+        <%= "#{booking.user.email} has requested to book #{booking.dinosaur.name}!" %>
+        <div class="pt-4">
+          <%= link_to "Approve", dinosaur_booking_path(booking.dinosaur.id, booking.id), data: { turbo_method: :patch, turbo_confirm: "Are you sure?" }, class: "btn btn-approve" %>
+          <%= link_to "Decline", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-decline" %>
       </div>
       <% end %>
     <% end %>
+    </div>
+  </div>
+
 <br>
-  <h3>Bookings you've reserved</h3>
+  <div class="co-12 col-sm-6 col-md-6 mb-3" id="bookingreserved">
+  <h4>Bookings you've reserved</h4>
+    <div class="someonerequest">
     <% if @pending_reserved_bookings.count == 0 && @reserved_bookings.count == 0 %>
-      <p><%= "You have not reserved any dinosaurs" %></p>
+      <p><%= "You have not reserved any dinosaurs :(" %></p>
+    </div>
+    <div class="someonerequest">
     <% else %>
       <% @pending_reserved_bookings.each do |booking| %>
-        <div class="card">
-          <%= "You have requested to book #{booking.dinosaur.name}" %>
-        </div>
+        <li >
+          <i class="fa-regular fa-clock"></i> <%=  "You have requested to book #{booking.dinosaur.name}!" %>
+        </li>
       <% end %>
     <% end %>
+    </div>
 
   <% @reserved_bookings.each do |booking| %>
-    <div class="card">
-      <%= "You have booked #{booking.dinosaur.name}" %>
+    <div class="someonerequest">
+      🦖 <%= "You have booked #{booking.dinosaur.name}" %>
     </div>
   <% end %>
+  </div>
 
-  <p><%= link_to "Back to dinos", dinosaurs_path, class: "btn btn-success" %></p>
+</div>
+<div class="backtodino mt-4">
+<li class="btn btn-back"><i class="fa-solid fa-backward"></i><%= link_to "Back to Dinos", dinosaurs_path %></li>
+</div>
 </div>
