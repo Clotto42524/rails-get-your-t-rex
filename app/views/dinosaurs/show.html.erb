@@ -1,10 +1,11 @@
 <div class="container">
+  <li class="btn btn-back"><i class="fa-solid fa-backward"></i><%= link_to " Back to Dinos", dinosaurs_path %></li>
   <div class="row m-5">
     <div class="container-show col-sm-6">
       <div id="photo">
         <img class= "card-img-big" src="<%= (@dinosaur.photo.attached? ? cl_image_path(@dinosaur.photo.key) : asset_path("default_dino.jpeg")) %>">
         <p id="user">Dino belongs to: <%=@dinosaur.user.email %></p>
-          <li class="btn btn-delete"><i class="fa-solid fa-backward"></i><%= link_to " Back to Dinos", dinosaurs_path %></li>
+          <%= link_to "Leave a review", new_dinosaur_review_path(@dinosaur), class: "btn btn-review" %>
       </div>
     </div>
 
@@ -16,21 +17,25 @@
           <p><strong>Average Rating: </strong><%= @avg_rating %></p>
           <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
           <br>
-          <%= link_to "Leave a review", new_dinosaur_review_path(@dinosaur), class: "btn btn-request" %>
       </div>
+
     </div>
+
+<div id="details" class="row">
+        <div class="col-sm-12 mx-1">
+          <h3>Reviews</h3>
+            <% @dinosaur.reviews.reverse.each do |review| %>
+              <p><strong>Rating: </strong><%= review.rating  %></p>
+              <p> <%= review.content %></p>
+            <% end  %>
+        </div>
+      </div>
   </div>
 
-  <div id="details" class="row">
-    <div class="col-sm-12 mx-5">
-      <h3>Reviews</h3>
-      <% @dinosaur.reviews.each do |review| %>
-        <p><strong>Rating: </strong><%= review.rating  %></p>
-        <p> <%= review.content %></p>
-      <% end  %>
-    </div>
   </div>
-</div>
+
+
+
 
     <!--<div id="links" class="row">
       <div class="col-sm-6">
