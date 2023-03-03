@@ -1,25 +1,31 @@
 <div class="container">
   <h1>Your Bookings</h1>
 
-  <h3>Bookings you've requested</h3>
-    <% @requested_bookings.each do |booking| %>
-    <div class="card">
-      <%=  "#{booking.user.email} has requested to book #{booking.dinosaur.name}"  %>
-      <div>
-        <%= link_to "Approve", dinosaur_booking_path(booking.dinosaur.id, booking.id), data: { turbo_method: :patch, turbo_confirm: "Are you sure?" }, class: "btn btn-success" %>
-        <%= link_to "Decline", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <h3>Requested Bookings</h3>
+    <% if @requested_bookings.count == 0 %>
+      <p><%= "No one has requested any bookings" %></p>
+    <% else %>
+      <% @requested_bookings.each do |booking| %>
+      <div class="card">
+        <%= "#{booking.user.email} has requested to book #{booking.dinosaur.name}" %>
+        <div>
+          <%= link_to "Approve", dinosaur_booking_path(booking.dinosaur.id, booking.id), data: { turbo_method: :patch, turbo_confirm: "Are you sure?" }, class: "btn btn-success" %>
+          <%= link_to "Decline", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+        </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
 <br>
   <h3>Bookings you've reserved</h3>
-  <% if @pending_reserved_bookings != nil %>
-    <% @pending_reserved_bookings.each do |booking| %>
-      <div class="card">
-        <%= "You have requested to book #{booking.dinosaur.name}" %>
-      </div>
+    <% if @pending_reserved_bookings.count == 0 && @reserved_bookings.count == 0 %>
+      <p><%= "You have not reserved any dinosaurs" %></p>
+    <% else %>
+      <% @pending_reserved_bookings.each do |booking| %>
+        <div class="card">
+          <%= "You have requested to book #{booking.dinosaur.name}" %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
 
   <% @reserved_bookings.each do |booking| %>
     <div class="card">
