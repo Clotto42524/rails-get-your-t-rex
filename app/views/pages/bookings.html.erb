@@ -13,6 +13,14 @@
     <% end %>
 <br>
   <h3>Bookings you've reserved</h3>
+  <% if @pending_reserved_bookings != nil %>
+    <% @pending_reserved_bookings.each do |booking| %>
+      <div class="card">
+        <%= "You have requested to book #{booking.dinosaur.name}" %>
+      </div>
+    <% end %>
+  <% end %>
+
   <% @reserved_bookings.each do |booking| %>
     <div class="card">
       <%= "You have booked #{booking.dinosaur.name}" %>
