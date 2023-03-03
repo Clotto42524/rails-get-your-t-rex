@@ -14,7 +14,11 @@
           <p><strong>Name: </strong><%= @dinosaur.name %></p>
           <p><strong> Age: </strong><%= @dinosaur.age %></p>
           <p><strong>Description: </strong><%= @dinosaur.description %></p>
+          <% if @avg_rating > 0 %>
           <p><strong>Average Rating: </strong><%= @avg_rating %></p>
+          <% else %>
+          <p><strong>Average Rating: </strong>No reviews</p>
+          <% end %>
           <%= render "bookings/form", dinosaur: @dinosaur, booking: @booking %>
           <br>
       </div>
