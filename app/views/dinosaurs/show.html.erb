@@ -23,23 +23,17 @@
 
 <div id="details" class="row">
         <div class="col-sm-12 mx-1">
-          <h3>Reviews</h3>
-            <% @dinosaur.reviews.reverse.each do |review| %>
-              <p><strong>Rating: </strong><%= review.rating  %></p>
-              <p> <%= review.content %></p>
-            <% end  %>
+          <h3><%= pluralize @dinosaur.reviews.size, "review" %></h3>
+            <% if @dinosaur.reviews.blank? %>
+              <p>Be the first to leave a review for <%= @dinosaur.name %></p>
+            <% else %>
+              <% @dinosaur.reviews.reverse.each do |review| %>
+                <p><strong>Rating: </strong><%= review.rating  %></p>
+                <p> <%= review.content %></p>
+              <% end  %>
+            <% end %>
         </div>
       </div>
   </div>
 
-  </div>
-
-
-
-
-    <!--<div id="links" class="row">
-      <div class="col-sm-6">
-        <ul>
-          <li class="btn btn-delete"><i class="fas fa-trash"></i><%= link_to " Delete this dinosaur", dinosaur_path(@dinosaur),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
-        </ul>-->
+</div>
