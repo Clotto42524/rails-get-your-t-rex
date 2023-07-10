@@ -18,6 +18,8 @@ Get your T-rex is a marketplace app for renting a dinosaur. The application allo
 * Yarn
 * CSS
 * HTML
+* Stimulus
+* JavaScript
 
 ## Features
 - Mapbox Geolocation
