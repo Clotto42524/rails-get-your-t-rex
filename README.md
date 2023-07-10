@@ -37,9 +37,29 @@ Get your T-rex is a marketplace app for renting a dinosaur. The application allo
 ![Screenshot - Trex 2](https://github.com/Clotto42524/rails-get-your-t-rex/assets/122602433/485d506a-e3c2-48c4-a03f-acec8456aa18)
 
 
-
-
 ## Setup
+To get started with the project, follow these installation instructions:
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/Clotto42524/rails-get-your-t-rex.git
+   ```
+
+2. Install the dependencies:
+
+   ```
+   cd rails-get-your-t-rex
+   npm install
+   ```
+
+3. Run the project locally:
+
+   ```
+   npm run dev
+
+   The app should now be running on http://localhost:3000/.
+   ```
 
 ## Project Status
 Status: Complete
